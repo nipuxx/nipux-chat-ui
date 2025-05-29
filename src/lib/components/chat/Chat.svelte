@@ -705,7 +705,7 @@
 
 	const initNewChat = async () => {
 		const availableModels = $models
-			.filter((m) => !(m?.info?.meta?.hidden ?? false))
+			.filter((m) => !(m?.info?.meta?.hidden ?? false) && !(m?.owned_by === 'arena' || m?.arena === true))
 			.map((m) => m.id);
 
 		if ($page.url.searchParams.get('models') || $page.url.searchParams.get('model')) {

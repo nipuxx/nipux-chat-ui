@@ -130,7 +130,7 @@
 							return item.model?.direct;
 						}
 					})
-	).filter((item) => !(item.model?.info?.meta?.hidden ?? false));
+	).filter((item) => !(item.model?.info?.meta?.hidden ?? false) && !(item.model?.owned_by === 'arena' || item.model?.arena === true));
 
 	$: if (selectedTag || selectedConnectionType) {
 		resetView();

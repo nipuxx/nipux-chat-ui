@@ -213,7 +213,7 @@
 										bind:value={selectedModelId}
 									>
 										<option value="">{$i18n.t('Select a model')}</option>
-										{#each $models as model}
+										{#each $models.filter((m) => m?.owned_by !== 'arena' && m?.arena !== true) as model}
 											<option value={model.id} class="bg-gray-50 dark:bg-gray-700"
 												>{model.name}</option
 											>

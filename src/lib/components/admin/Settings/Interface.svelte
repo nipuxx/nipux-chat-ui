@@ -164,7 +164,7 @@
 							}}
 						>
 							<option value="" selected>{$i18n.t('Current Model')}</option>
-							{#each models as model}
+							{#each models.filter((m) => m?.owned_by !== 'arena' && m?.arena !== true) as model}
 								<option value={model.id} class="bg-gray-100 dark:bg-gray-700">
 									{model.name}
 									{model?.connection_type === 'local' ? `(${$i18n.t('Local')})` : ''}
@@ -199,7 +199,7 @@
 							}}
 						>
 							<option value="" selected>{$i18n.t('Current Model')}</option>
-							{#each models as model}
+							{#each models.filter((m) => m?.owned_by !== 'arena' && m?.arena !== true) as model}
 								<option value={model.id} class="bg-gray-100 dark:bg-gray-700">
 									{model.name}
 									{model?.connection_type === 'local' ? `(${$i18n.t('Local')})` : ''}

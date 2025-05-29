@@ -608,7 +608,7 @@
 									/>
 
 									<datalist id="tts-model-list">
-										{#each models as model}
+										{#each models.filter((m) => m?.owned_by !== 'arena' && m?.arena !== true) as model}
 											<option value={model.id} class="bg-gray-50 dark:bg-gray-700" />
 										{/each}
 									</datalist>
@@ -649,7 +649,7 @@
 									/>
 
 									<datalist id="tts-model-list">
-										{#each models as model}
+										{#each models.filter((m) => m?.owned_by !== 'arena' && m?.arena !== true) as model}
 											<option value={model.id} class="bg-gray-50 dark:bg-gray-700" />
 										{/each}
 									</datalist>

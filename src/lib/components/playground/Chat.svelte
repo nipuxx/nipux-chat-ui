@@ -237,7 +237,7 @@
 								class="w-full bg-transparent border border-gray-100 dark:border-gray-850 rounded-lg py-1 px-2 -mx-0.5 text-sm outline-hidden"
 								bind:value={selectedModelId}
 							>
-								{#each $models as model}
+								{#each $models.filter((m) => m?.owned_by !== 'arena' && m?.arena !== true) as model}
 									<option value={model.id} class="bg-gray-50 dark:bg-gray-700">{model.name}</option>
 								{/each}
 							</select>
