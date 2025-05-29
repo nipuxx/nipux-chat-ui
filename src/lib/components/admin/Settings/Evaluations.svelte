@@ -154,15 +154,15 @@
 										}}
 									/>
 								{/each}
-							{:else}
-								<div class=" text-center text-xs text-gray-500">
-									{$i18n.t(
-										`Using the default arena model with all models. Click the plus button to add custom models.`
-									)}
-								</div>
-							{/if}
-						</div>
-					</div>
+                                                        {:else}
+                                                                <div class=" text-center text-xs text-gray-500">
+                                                                        {$i18n.t(
+                                                                               `No arena models configured. Click the plus button to add custom models.`
+                                                                        )}
+                                                                </div>
+                                                        {/if}
+                                                </div>
+                                        </div>
 				{/if}
 			</div>
 		{:else}
